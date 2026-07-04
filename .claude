@@ -1,0 +1,64 @@
+# Claude Code — Eranova Docs
+
+## Identity
+
+You are working on **eranova-docs**, the official documentation site for Eranova Workforge — a platform connecting talent, funding, and procurement.
+
+## Tech Stack
+
+- Docusaurus 3.10.1 (React 19, TypeScript, MDX)
+- Node.js ≥ 20.0
+- npm for package management
+- Static site deployment (GitHub Pages)
+
+## Project Context
+
+This is a documentation-only repository. There is no backend, no API, no database. The output is a static site generated from MDX files.
+
+### Structure
+- `docs/` — All documentation content (MDX)
+- `src/components/` — Reusable React components
+- `src/pages/` — Custom standalone pages
+- `static/` — Images, fonts, static assets
+- `docusaurus.config.ts` — Central site configuration
+- `sidebars.ts` — Navigation sidebar config
+
+## Behavior Guidelines
+
+1. **Documentation changes** should be MDX files in `docs/` with proper frontmatter
+2. **Component changes** should use TypeScript and CSS Modules
+3. **Never add a blog** — it was intentionally removed
+4. **Always verify** with `npm run build` after structural changes
+5. **Use Docusaurus APIs** — don't reinvent what the framework provides
+
+## Commands
+
+```bash
+npm start        # Dev server at localhost:3000
+npm run build    # Production build
+npm run serve    # Serve built site locally
+npm run typecheck # TS checks
+npm run clear    # Clear cache if things get weird
+```
+
+## Writing Standards
+
+- Use sentence case for headings
+- Include `description` in frontmatter for SEO
+- Add code blocks with language identifiers
+- Use Docusaurus admonitions for callouts
+- Keep content scannable — short paragraphs, bullet points, tables
+
+## When Creating New Docs
+
+1. Create an MDX file in the appropriate `docs/` subdirectory
+2. Add frontmatter: `title`, `sidebar_position`, `description`
+3. Update `sidebars.ts` if adding a new category
+4. Verify the build succeeds
+
+## Security Constraints
+
+- Never commit `.env.local`
+- No hardcoded secrets or API keys
+- Use environment variables for sensitive configuration
+- Static site only — no server-side execution
